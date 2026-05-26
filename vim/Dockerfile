@@ -2,8 +2,8 @@ FROM node:22-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
-COPY index.html vite.config.ts tsconfig.json tsconfig.app.json tsconfig.node.json eslint.config.js ./
-COPY public/ public/
+COPY index.html vite.config.js ./
+COPY public/ public/ 2>/dev/null || true
 COPY src/ src/
 RUN npm run build
 
