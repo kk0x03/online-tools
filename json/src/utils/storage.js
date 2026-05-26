@@ -1,0 +1,27 @@
+export const storage = {
+  get(key, defaultValue = null) {
+    try {
+      const raw = localStorage.getItem(key)
+      if (raw === null) return defaultValue
+      return JSON.parse(raw)
+    } catch {
+      return defaultValue
+    }
+  },
+
+  set(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch {
+      // quota exceeded or private mode
+    }
+  },
+
+  remove(key) {
+    try {
+      localStorage.removeItem(key)
+    } catch {
+      // silent fail
+    }
+  }
+}

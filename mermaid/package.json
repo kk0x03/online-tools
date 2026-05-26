@@ -1,0 +1,17 @@
+{
+  "name": "mermaid-online",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "codemirror": "^6.0.2",
+    "mermaid": "^11.14.0",
+    "vue": "^3.5.33"
+  }
+}
