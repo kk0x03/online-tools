@@ -58,7 +58,7 @@ jobs:
           context: ./${{ matrix.project }}
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.project }}:latest
-            ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ matrix.project }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.project }}:latest
+            ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.project }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
